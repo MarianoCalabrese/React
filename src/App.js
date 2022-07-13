@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="container">
       <nav>
-        <Header name="SimplyInventory" />
+        <Header name="Testforgit" />
         <p className="buttonMenuContainer">
           <Button
             name="Article list"
