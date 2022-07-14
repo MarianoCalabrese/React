@@ -24,6 +24,13 @@ const BookOutArticle = ({
     });
   };
 
+  const articleId = (inputTextArticleName) =>
+    list.map((element) => {
+      if (inputTextArticleName === element.name) {
+        return element.articleid;
+      }
+    });
+
   const addItemInBookList = () => {
     if (
       inputTextArticleName !== "...choose" &&
@@ -38,6 +45,7 @@ const BookOutArticle = ({
       const newArray = [...booklist];
       newArray.push({
         id: uuidv4(),
+        articleid: articleId(inputTextArticleName),
         articlename: inputTextArticleName,
         bookdate: inputBookDate,
         bookreason: inputTextBookOutReason,

@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const CreateArticle = ({ list, setList, articleStatus, setArticleStatus }) => {
   const [inputTextArticleName, setInputTextArticleName] = useState("");
-  const [inputTextArticleQuantity, setInputTextArticleQuantity] = useState("");
+  const [inputTextArticleQuantity, setInputTextArticleQuantity] = useState(0);
   const [inputTextArticleCategorie, setInputTextArticleCategorie] = useState(
     ""
   );
@@ -83,7 +83,7 @@ const CreateArticle = ({ list, setList, articleStatus, setArticleStatus }) => {
           />
           Calculated assets:
           <input
-            type="text"
+            type="number"
             name="CalcuclatedAssets"
             value={inputTextArticleQuantity}
             onChange={(e) => setInputTextArticleQuantity(e.target.value)}

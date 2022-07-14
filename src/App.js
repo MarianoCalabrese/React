@@ -14,11 +14,13 @@ const App = () => {
   const [list, setList] = useState([]);
   const [bookList, setBookList] = useState([]);
   const [articleStatus, setArticleStatus] = useState(false);
+  const [totalUnits, setTotalUnits] = useState(0);
+
   console.log(currentView);
   return (
     <div className="container">
       <nav>
-        <Header name="Testforgit" />
+        <Header name="SimplyInventory" />
         <p className="buttonMenuContainer">
           <Button
             name="Article list"
@@ -64,10 +66,16 @@ const App = () => {
           booklist={bookList}
           articleStatus={articleStatus}
           setArticleStatus={setArticleStatus}
+          setTotalUnits={setTotalUnits}
         />
       ) : null}
       {currentView === "ArticleList" ? (
-        <ArticleList list={list} setToDoList={setList} />
+        <ArticleList
+          list={list}
+          setToDoList={setList}
+          bookList={bookList}
+          totalUnits={totalUnits}
+        />
       ) : null}
       {currentView === "Inventory" ? (
         <Inventory bookList={bookList} setBookList={setBookList} list={list} />

@@ -35,8 +35,8 @@ const Inventory = ({ list, bookList, setBookList }) => {
               <td className="td">{element.packagingunit}</td>
               <td className="td">{element.numberofunits}</td>
               <td className="td">{element.totalunits}</td>
-              <td className="td">{element.id}</td>
-              <td className="td">{element.articleid}</td>
+              {/* <td className="td">{element.id}</td>
+              <td className="td">{element.articleid}</td>  IDs which should not be shown in the Inventory */}
               <Button
                 name="X"
                 onClick={() => onDelete(element.id)}

@@ -12,14 +12,15 @@ const BookArticle = ({
   booklist,
   setBookList,
   articleStatus,
-  setArticleStatus
+  setArticleStatus,
+  setTotalUnits
 }) => {
   const [inputTextArticleName, setinputTextArticleName] = useState("");
   const [inputBookDate, setinputBookDate] = useState("");
   const [inputNumberPackagingUnit, setinputNumberPackagingUnit] = useState(0);
   const [inputNumberOfUnits, setinputNumberOfUnits] = useState(0);
   const [inputTextBookReason, setinputTextBookReason] = useState("");
-  const [lastAddedItem, setLastAddedItem] = useState("null");
+
   const ItemList = () => {
     return list.map((element) => {
       return (
@@ -29,16 +30,18 @@ const BookArticle = ({
       );
     });
   };
+
   const numberOfArticles = (inputNumberPackagingUnit, inputNumberOfUnits) => {
     let numberOfItems = inputNumberPackagingUnit * inputNumberOfUnits;
     return numberOfItems;
   };
 
-  const articleId = () => {
+  const articleId = (inputTextArticleName) =>
     list.map((element) => {
-      return setLastAddedItem(element.articleid);
+      if (inputTextArticleName === element.name) {
+        return element.articleid;
+      }
     });
-  };
 
   const addItemInBookList = () => {
     if (
@@ -51,11 +54,10 @@ const BookArticle = ({
       inputNumberPackagingUnit &&
       inputNumberPackagingUnit.length > 0
     ) {
-      setLastAddedItem("test");
       const newArray = [...booklist];
       const newItem = {
         id: uuidv4(),
-        articleid: lastAddedItem,
+        articleid: articleId(inputTextArticleName),
         articlename: inputTextArticleName,
         bookdate: inputBookDate,
         bookreason: inputTextBookReason,
@@ -68,6 +70,7 @@ const BookArticle = ({
       };
       newArray.push(newItem);
       setBookList(newArray);
+      setTotalUnits(newItem.totalunits);
       setinputTextArticleName("");
       setinputBookDate("");
       setinputTextBookReason("");
