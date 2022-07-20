@@ -3,6 +3,8 @@ import { useState } from "react";
 import styles from "./styles.css";
 import BookArticle from "./BookArticle.js";
 import Button from "./Button.js";
+import Table from 'react-bootstrap/Table';
+
 
 const ArticleList = ({ list, setToDoList, bookList, totalUnits }) => {
   const onDelete = (name) => {
@@ -17,13 +19,14 @@ const ArticleList = ({ list, setToDoList, bookList, totalUnits }) => {
 
   const currentStock = () => {
     bookList.map((element) => {
-      return element.totalunits;
+       return element.totalunits;  
+      
     });
   };
 
   return (
-    <div className="tableContainer">
-      <table>
+    <div class="tableContainer">
+      <table class="table table-bordered table-hover">
         <tr>
           <th className="th">Articlename&ensp;</th>
           <th className="th">Article category&ensp;</th>
@@ -42,7 +45,7 @@ const ArticleList = ({ list, setToDoList, bookList, totalUnits }) => {
               <td className="td">{element.supplier}</td>
               <td className="td">{element.supplierEmail}</td>
               <td className="td">{element.quantity}</td>
-              <td className="td">{totalUnits}</td>
+              <td className="td">{currentStock()}</td>
               {/* <td className="td">{element.articleid}</td> articleid should not be shown in articleliste */}
               <Button
                 name="X"

@@ -138,7 +138,7 @@ const BookArticle = ({
         <Button
           name="Book"
           onClick={addItemInBookList}
-          className="buttonStandard"
+          className="btn btn-primary"
         />
         <Button
           name="Delete Data"
@@ -148,7 +148,7 @@ const BookArticle = ({
             setinputTextBookReason("");
             setinputNumberOfUnits(0);
           }}
-          className="buttonStandard"
+          className="btn btn-primary"
         />
       </div>
       {articleStatus === true ? (

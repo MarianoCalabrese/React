@@ -17,7 +17,7 @@ const Inventory = ({ list, bookList, setBookList }) => {
 
   return (
     <div className="tableContainer">
-      <table>
+      <table class="table table-striped table-bordered table-hover table-condensed">
         <tr>
           <th className="th">Articlename&ensp;</th>
           <th className="th">Book Date&ensp;</th>

@@ -8,6 +8,8 @@ import CreateArticle from "./CreateArticle.js";
 import Saved from "./Saved.js";
 import Inventory from "./Inventory.js";
 import BookOutArticle from "./BookOutArticle.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const [currentView, setcurrentView] = useState("overview");
@@ -25,27 +27,27 @@ const App = () => {
           <Button
             name="Article list"
             onClick={() => setcurrentView("ArticleList")}
-            className="buttonMenu"
+            className="btn btn-link btn-lg"
           />
           <Button
             name="Create article"
             onClick={() => setcurrentView("CreateArticle")}
-            className="buttonMenu"
+            className="btn btn-link btn-lg"
           />
           <Button
             name="Book in article"
             onClick={() => setcurrentView("BookArticle")}
-            className="buttonMenu"
+            className="btn btn-link btn-lg"
           />
           <Button
             name="Book out article"
             onClick={() => setcurrentView("BookOutArticle")}
-            className="buttonMenu"
+            className="btn btn-link btn-lg"
           />
           <Button
             name="Inventory"
             onClick={() => setcurrentView("Inventory")}
-            className="buttonMenu"
+            className="btn btn-link btn-lg"
           />
         </p>
       </nav>
